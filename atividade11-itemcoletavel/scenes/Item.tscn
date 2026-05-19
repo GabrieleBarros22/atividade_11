@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm1ifyaadhbj5"]
+
+[ext_resource type="Script" uid="uid://b0of0881egcre" path="res://scripts/Item.gd" id="1_bx46p"]
+[ext_resource type="Texture2D" uid="uid://cnykqa30fnneq" path="res://assets/sprout_lands/Objects/Egg item.png" id="1_j3wwg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bx46p"]
+radius = 8.8
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_bx46p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_j3wwg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bx46p")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
